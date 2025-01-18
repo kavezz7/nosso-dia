@@ -1,5 +1,3 @@
-// script.js
-
 // Função para adicionar uma nova programação
 function addProgram() {
     const programName = document.getElementById('program-name').value;
@@ -50,9 +48,18 @@ function loadPrograms() {
         const li = document.createElement('li');
         li.innerHTML = `
             <span>${program.name}</span> - <strong>${program.date}</strong>
-            <button onclick="deleteProgram(${index})">Excluir</button>
+            <button class="delete-btn" data-index="${index}">Excluir</button>
         `;
         ul.appendChild(li);
+    });
+
+    // Adicionar event listeners aos botões de excluir
+    const deleteButtons = document.querySelectorAll('.delete-btn');
+    deleteButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            const index = e.target.getAttribute('data-index');
+            deleteProgram(index);
+        });
     });
 }
 
