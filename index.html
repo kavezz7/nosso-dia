@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programações com a Namorada</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Programações com a Namorada</h1>
+            <p>Uma pequena lista do que podemos fazer</p>
+        </header>
+
+        <section class="add-program">
+            <h2>O que vamos fazer?</h2>
+            <input type="text" id="program-name" placeholder="Nome da programação" />
+            <input type="date" id="program-date" />
+            <button onclick="addProgram()">Adicionar</button>
+        </section>
+
+        <section class="program-list">
+            <h2>Nossa lista</h2>
+            <ul id="programs"></ul>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
